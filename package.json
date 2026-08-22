@@ -1,0 +1,22 @@
+{
+  "name": "handybim",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.2.0"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^1.0.1",
+    "@thatopen/components": "^3.4.8",
+    "@thatopen/fragments": "^3.4.7",
+    "three": "^0.185.1"
+  }
+}

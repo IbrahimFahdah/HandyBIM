@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #111;
+}
+
+#renderDiv {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #111;
+}
+
+.text-box {
+  padding: 8px 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  border-radius: 4px;
+  font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+  border: 2px solid black;
+  box-shadow: 3px 3px 0px black;
+  font-size: clamp(13px, 2vw, 15px);
+  text-align: center;
+  z-index: 200;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out, box-shadow 0.2s ease;
+}
+
+#instruction-text {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: min(560px, calc(100vw - 20px));
+  pointer-events: auto;
+}
+
+.landmark-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.background-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.gesture-controls {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 30;
+  display: flex;
+  gap: 8px;
+}
+
+.gesture-controls button {
+  padding: 8px 11px;
+  border: 2px solid #111;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  font: 600 13px/1.1 "Arial", "Helvetica Neue", Helvetica, sans-serif;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #111;
+}
+
+.gesture-controls button:hover,
+.gesture-controls button:focus-visible {
+  background: #00bfff;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .gesture-controls {
+    top: auto;
+    bottom: 52px;
+  }
+
+  .gesture-controls button {
+    font-size: 12px;
+  }
+}
